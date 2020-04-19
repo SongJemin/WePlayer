@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.search.SearchActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_top_search"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <EditText
+            android:id="@+id/et_keyword_search"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:hint="키워드를 입력하세요"
+            android:paddingStart="20dp"
+            android:background="@color/transparent"
+            android:layout_weight="8"
+            />
+
+        <Button
+            android:id="@+id/btn_keyword_search"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="2"
+            android:text="검색"
+            android:layout_toEndOf="@+id/et_keyword_search"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_top_search"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#c8c8c8"
+        android:layout_below="@+id/ll_top_search"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_top_search"
+        android:layout_marginTop="10dp"
+        />
+
+</RelativeLayout>
