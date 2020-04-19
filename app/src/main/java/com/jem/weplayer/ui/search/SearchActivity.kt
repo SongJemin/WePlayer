@@ -43,7 +43,8 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
     // 유튜브 검색 데이터 가져오기
     fun getDatas(keyword : String) {
         youtubeNetworkService = YoutubeApiClient.getRetrofit().create(YoutubeNetworkService::class.java)
-        val getVideoListResponse = youtubeNetworkService.getYoutubeSearch(apiKey, "snippet", keyword, 30)
+//        val getVideoListResponse = youtubeNetworkService.getYoutubeSearch(apiKey, "snippet", keyword, 30)
+        val getVideoListResponse = youtubeNetworkService.getYoutubeSearch(apiKey, "snippet", "아이유", 30)
 
         getVideoListResponse.enqueue(object : retrofit2.Callback<GetYoutubeSearchResponse>{
             override fun onFailure(call: Call<GetYoutubeSearchResponse>, t: Throwable) {

@@ -21,5 +21,4 @@ interface YoutubeNetworkService {
         @Query("q") q : String,
         @Query("maxResults") maxResults : Int
     ) : Call<GetYoutubeSearchResponse>
-
 }

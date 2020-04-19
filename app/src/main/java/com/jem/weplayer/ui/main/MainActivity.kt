@@ -30,6 +30,8 @@ class MainActivity : YouTubeBaseActivity() {
 
                 var videoId = intent.getStringExtra("videoId")
 
+                // 회의 정해야할듯
+//                player!!.setPlayerStyle(YouTubePlayer.PlayerStyle.CHROMELESS)
                 // 1000 = 1초
                 btn_time_search.setOnClickListener {
                     player!!.loadVideo(videoId, Integer.parseInt(et_time_search.text.toString()))
@@ -37,6 +39,7 @@ class MainActivity : YouTubeBaseActivity() {
 
                 if(!wasRestored){
                     player!!.loadVideo(videoId)
+//                    player!!.loadVideo(videoId, 66000)
                 }
 
                 player!!.setPlayerStateChangeListener(object : YouTubePlayer.PlayerStateChangeListener{
@@ -64,8 +67,20 @@ class MainActivity : YouTubeBaseActivity() {
                 player.setPlaybackEventListener(object : YouTubePlayer.PlaybackEventListener{
                     override fun onSeekTo(p0: Int) {
                     }
+                    var startBufferdTime : Long = 0
+                    var endBufferdTime : Long = 0
+                    var subBufferringTime : Int = 0
 
-                    override fun onBuffering(p0: Boolean) {
+                    override fun onBuffering(isBuffering: Boolean) {
+                       /* if (isBuffering) {
+                            startBufferdTime = System.currentTimeMillis()
+                        }
+
+                        if (!isBuffering) {
+                            endBufferdTime = System.currentTimeMillis()
+                            subBufferringTime = (endBufferdTime - startBufferdTime).toInt()
+//                            player.seekRelativeMillis(subBufferringTime)
+                        }*/
                     }
 
                     override fun onPlaying() {
